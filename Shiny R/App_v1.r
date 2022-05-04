@@ -10,35 +10,40 @@
 library(shiny)
 library(tidyverse)
 library(magrittr)
+library(RColorBrewer)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   titlePanel("Included Content"),
   mainPanel(
     includeHTML("index.html")
-  )
-)
+  ),
+  plotOutput(outputId = "ErrorbarPlot")
+ )
 
 # Define server logic required to make plot
 server <- function(input, output){
     output$ErrorbarPlot <- renderPlot({
         # generate dataframe holding input data          
-        df<-data.frame(Mean=c(input$helloValue, input$helloValue2),
-                       sd=c(input$sd1,input$sd2),
-                       Category=c(input$group1label, input$group2label))
+        df<-data.frame(Mean=c(input$IV1_level1_mean, input$IV1_level2_mean),
+                       sd=c(input$IV1_level1_sd,input$IV1_level2_sd),
+                       Category=c(input$IV1_level1_name, input$IV1_level2_name))
+        
         
         # plot in graph
         (p <- ggplot(df, aes(x=Category, y=Mean)) + 
-            geom_point()+
+            geom_bar(stat="identity") +
+            scale_colour_brewer(palette = "YlOrRd", direction = - 1) + 
+            scale_fill_brewer(palette = "BuPu") +
             geom_errorbar(aes(ymin=Mean-sd, ymax=Mean+sd), width=.2,
                           position=position_dodge(0.05)) +
-            labs(title = paste("Figure", input$fign),
-                 subtitle = input$subtitle,
-                 caption = paste("Note. Error bars indicate ", input$errorbars, ". ", input$caption)) +
-            xlab(input$xlabel) +
-            ylab(input$ylabel) +
-            theme_classic() +
-            theme(plot.title = element_text(face = "bold", size = 20),
+            labs(title = paste("Figure", input$fig_number),
+                 subtitle = input$fig_subtitle,
+                 caption = paste("Note. Error bars indicate ", input$errorbar_rep, ". ", input$fig_caption)) +
+            xlab(input$IV_name) +
+            ylab(input$DV_name) +
+           # theme_classic() +
+                  theme(plot.title = element_text(face = "bold", size = 20),
                   plot.subtitle = element_text(size = 16),
                   plot.caption = element_text(size = 12),
                   axis.title.x = element_text(face = "bold", size = 14),

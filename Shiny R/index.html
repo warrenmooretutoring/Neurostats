@@ -5,5 +5,47 @@
 </head>
 <body>
   <h1 class="text-danger" id="helloValue">6</h1>
-  <h1 class="text-danger" id="helloValue2">9</h1>
+  <h1 class="text-danger" id="helloValue2">0</h1>
+  
+  <form>
+    <label for="DV_name">Dependent variable</label>
+    <input type="text" id="DV_name" name="DV_name" value="Reaction time"><br>
+  
+    <label for="IV_name">Independent variable</label>
+    <input type="text" id="IV_name" name="IV_name" value="Drink type"><br>
+  
+    <label for="IV1_level1_name">Group 1</label>
+    <input type="text" id="IV1_level1_name" name="IV1_level1_name" value="Caffeinated"><br>
+  
+    <label for="IV1_level2_name">Group 2</label>
+    <input type="text" id="IV1_level2_name" name="IV1_level2_name" value="Decaf"><br>
+  
+    <label for="IV1_level1_mean">Group 1 mean</label>
+    <input type="number" id="IV1_level1_mean" name="IV1_level1_mean" value="40"><br>
+  
+    <label for="IV1_level2_mean">Group 2 mean</label>
+    <input type="number" id="IV1_level2_mean" name="IV1_level2_mean" value="90"><br>
+  
+    <label for="IV1_level1_sd">Group 1 sd</label>
+    <input type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"><br>
+  
+    <label for="IV1_level2_sd">Group 2 sd</label>
+    <input type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"><br>
+    
+    <input type="radio" id="sd" name="errorbar_rep" value="SE">
+    <label for="sd">SD</label><br>
+    <input type="radio" id="se" name="errorbar_rep" value="SE">
+    <label for="se">SE</label><br>
+    <input type="radio" id="95CI" name="errorbar_rep" value="95%CI">
+    <label for="95CI">95%CI</label><br>
+    
+    <label for="fig_number">Figure number/letter</label>
+    <input type="text" id="fig_number" name="fig_number" value="1"><br>
+    
+    <label for="fig_caption">Figure caption</label>
+    <input type="text" id="fig_caption" name="fig_caption" value="This is a caption."><br>
+
+    <label for="fig_subtitle">Subtitle</label>
+    <input type="text" id="fig_subtitle" name="fig_subtitle" value="This is a subtitle."><br>
+  </form>
 </body>
