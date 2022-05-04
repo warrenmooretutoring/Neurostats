@@ -23,7 +23,7 @@ ui <- fluidPage(
 server <- function(input, output){
     output$ErrorbarPlot <- renderPlot({
         # generate dataframe holding input data          
-        df<-data.frame(Mean=c(input$mean1, input$mean2),
+        df<-data.frame(Mean=c(input$helloValue, input$helloValue2),
                        sd=c(input$sd1,input$sd2),
                        Category=c(input$group1label, input$group2label))
         
