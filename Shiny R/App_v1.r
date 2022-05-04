@@ -9,47 +9,14 @@
 
 library(shiny)
 library(tidyverse)
+library(magrittr)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-
-    # Link css style sheet
-   includeCSS("www/style.css"),
-  
- 
-    # Application title
-    titlePanel(h1("T-test plot")),
-    
-    # label input
-    textInput("ylabel", label = h2("Dependent variable"), value = "Reaction time"),
-    textInput("xlabel", label = h2("Independent variable"), value = "Drink type"),
-
-    textInput("group1label", label = h2("Level 1"), value = "Coffee"),
-    textInput("group2label", label = h2("Level 2"), value = "Water"),
-    
-    # Numberic input 
-    numericInput("mean1", label = h2("Mean value for group 1"), value = 1),
-    numericInput("mean2", label = h2("Mean value for group 1"), value = 1.5),
-
-    numericInput("sd1", label = h2("standard deviation for group 1"), value = 0.016),
-    numericInput("sd2", label = h2("standard deviation for group 2"), value = 0.028),
-    
-    # error bars
-    radioButtons("errorbars", label = h2("Error bars indicate:"),
-                 choices = list("Standard deviation" = "SD", "Standard Error" = "SE", "95% Confidence Interval" = "CI"), 
-                 selected = 1),
-
-    textInput("fign", label = h2("Figure number"), value = "1"),
-    textInput("subtitle", label = h2("Figure description"), value = "Reaction time as a function of drink type"),
-    textInput("caption", label = h2("Figure notes"), value = "No significant difference in reaction time was found between drink type coffee and water"),
-    
-    hr(),
-    fluidRow(column(3, verbatimTextOutput("value"))),
-    
-    # Show a plot of the generated distribution
-    mainPanel(plotOutput("ErrorbarPlot")),
-    
-  #  downloadButton(outputId, label = "Download")
+  titlePanel("Included Content"),
+  mainPanel(
+    includeHTML("index.html")
+  )
 )
 
 # Define server logic required to make plot
