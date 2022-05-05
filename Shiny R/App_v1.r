@@ -14,7 +14,6 @@ library(RColorBrewer)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  titlePanel("Included Content"),
   mainPanel(
     includeHTML("index.html")
   ),
@@ -39,7 +38,7 @@ server <- function(input, output){
                           position=position_dodge(0.05)) +
             labs(title = paste("Figure", input$fig_number),
                  subtitle = input$fig_subtitle,
-                 caption = paste("Note. Error bars indicate ", input$errorbar_rep, ". ", input$fig_caption)) +
+                 caption = paste("Note. Error bars indicate", input$errorBarType,". ", input$fig_caption)) +
             xlab(input$IV_name) +
             ylab(input$DV_name) +
            # theme_classic() +

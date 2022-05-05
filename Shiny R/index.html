@@ -2,50 +2,141 @@
 <head>
   <title>Neurostats Form</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <style>
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  color:#EE7D33;
+  text-align: center;
+  padding-bottom: 20px;
+} 
+
+h2 {
+   /*font-family: 'Lobster', cursive;   */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #4472C4;
+  padding-bottom: 20px;
+}
+
+h3 {
+   /*font-family: 'Lobster', cursive;   */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #4472C4;
+  text-align: center;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+#chartForm {
+  display: inline-block;
+}
+
+#nameVars {
+  border: 1px black;
+  display: inline-block;
+}  
+
+#group1 {
+  display: inline-block;
+  float:left;
+}
+
+#group2 {
+  display: inline-block;
+  float:left;
+}
+
+#variablesContainer {
+  width: 300px;
+}
+
+#figureOptionsContainer {
+  width: 300px;
+}
+
+.formLabel{
+  width:100px;
+  text-align: right;
+}
+
+.formInput {
+  width:100px;
+}
+
+.container {
+  display: inline-block;
+  padding-bottom: 40px;
+}
+
+.radioLabel {
+  width:25px;
+}
+
+.radioInput {
+  background-color:lightgreen;
+}
+
+  </style>
 </head>
 <body>
-  <h1 class="text-danger" id="helloValue">6</h1>
-  <h1 class="text-danger" id="helloValue2">0</h1>
+  <h1>Chart Builder</h1>
+  <h2>Comparing Two Group Means</h2>
+  <form id="chartForm">
+    <div class="container" id="variablesContainer">
+      <h3>Variables</h2>
+      <label class="formLabel" for="DV_name">DV name</label>
+      <input class="formInput" type="text" id="DV_name" name="DV_name" value="Reaction time"><br>
   
-  <form>
-    <label for="DV_name">Dependent variable</label>
-    <input type="text" id="DV_name" name="DV_name" value="Reaction time"><br>
+      <label class="formLabel" for="IV_name">IV name</label>
+      <input class="formInput" type="text" id="IV_name" name="IV_name" value="Drink type"><br>
+    </div>
+    <div class="container"r>
+      <div id="group1">
+        <h3>Group 1</h2>
+        <label class="formLabel" for="IV1_level1_name">Variable name</label>
+        <input class="formInput" type="text" id="IV1_level1_name" name="IV1_level1_name" value="Caffeinated"><br>
+        
+        <label class="formLabel" for="IV1_level1_mean">Mean</label>
+        <input class="formInput" type="number" id="IV1_level1_mean" name="IV1_level1_mean" value="40"><br>
+      
+        <select class="formLabel" name="errorBarType">
+          <option value="standard deviation">SD</option>
+          <option value="standard error">SE</option>
+          <option value="95%CI">95%CI</option>
+        </select>
+        <input class="formInput" type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"><br>
+      </div>
+      <div id="group2">
+        <h3>Group 2</h2>
+      <!--  <label class="formLabel" for="IV1_level2_name">Variable name</label> -->
+        <input class="formInput" type="text" id="IV1_level2_name" name="IV1_level2_name" value="Decaf"><br>
+      
+      <!--    <label class="formLabel" for="IV1_level2_mean">Mean</label> -->
+        <input class="formInput" type="number" id="IV1_level2_mean" name="IV1_level2_mean" value="90"><br>
+      
   
-    <label for="IV_name">Independent variable</label>
-    <input type="text" id="IV_name" name="IV_name" value="Drink type"><br>
-  
-    <label for="IV1_level1_name">Group 1</label>
-    <input type="text" id="IV1_level1_name" name="IV1_level1_name" value="Caffeinated"><br>
-  
-    <label for="IV1_level2_name">Group 2</label>
-    <input type="text" id="IV1_level2_name" name="IV1_level2_name" value="Decaf"><br>
-  
-    <label for="IV1_level1_mean">Group 1 mean</label>
-    <input type="number" id="IV1_level1_mean" name="IV1_level1_mean" value="40"><br>
-  
-    <label for="IV1_level2_mean">Group 2 mean</label>
-    <input type="number" id="IV1_level2_mean" name="IV1_level2_mean" value="90"><br>
-  
-    <label for="IV1_level1_sd">Group 1 sd</label>
-    <input type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"><br>
-  
-    <label for="IV1_level2_sd">Group 2 sd</label>
-    <input type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"><br>
-    
-    <input type="radio" id="sd" name="errorbar_rep" value="SE">
-    <label for="sd">SD</label><br>
-    <input type="radio" id="se" name="errorbar_rep" value="SE">
-    <label for="se">SE</label><br>
-    <input type="radio" id="95CI" name="errorbar_rep" value="95%CI">
-    <label for="95CI">95%CI</label><br>
-    
-    <label for="fig_number">Figure number/letter</label>
-    <input type="text" id="fig_number" name="fig_number" value="1"><br>
-    
-    <label for="fig_caption">Figure caption</label>
-    <input type="text" id="fig_caption" name="fig_caption" value="This is a caption."><br>
-
-    <label for="fig_subtitle">Subtitle</label>
-    <input type="text" id="fig_subtitle" name="fig_subtitle" value="This is a subtitle."><br>
+        <input class="formInput" type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"><br>
+      </div> 
+    </div>
+      <div class="container" id=figureOptionsContainer>
+      <h3>Figure options</h3>
+      <label class="formLabel" for="fig_number">Figure #</label>
+      <input class="formInput" type="text" id="fig_number" name="fig_number" value="1"><br>
+      
+      <label class="formLabel" for="fig_subtitle">Subtitle</label>
+      <input class="formInput"type="text" id="fig_subtitle" name="fig_subtitle" value="This is a subtitle."><br>
+      
+      <label class="formLabel" for="fig_caption">Figure caption</label>
+      <input class="formInput"type="text" id="fig_caption" name="fig_caption" value="Mean Reaction Time Scores As A Function of Caffeine Content"><br>
+  </div>
   </form>
 </body>
