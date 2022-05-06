@@ -15,6 +15,7 @@ library(RColorBrewer)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   mainPanel(
+    includeCSS("www/style.css"),
     includeHTML("index.html")
   ),
   plotOutput(outputId = "ErrorbarPlot")
