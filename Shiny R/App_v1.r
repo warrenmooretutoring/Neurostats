@@ -31,9 +31,8 @@ server <- function(input, output){
         
         
         # plot in graph
-        (p <- ggplot(df, aes(x=Category, y=Mean)) + 
+        (p <- ggplot(df, aes(x=Category, y=Mean, fill = Category)) + 
             geom_bar(stat="identity") +
-            scale_colour_brewer(palette = "YlOrRd", direction = - 1) + 
             scale_fill_brewer(palette = "BuPu") +
             geom_errorbar(aes(ymin=Mean-sd, ymax=Mean+sd), width=.2,
                           position=position_dodge(0.05)) +
@@ -42,7 +41,7 @@ server <- function(input, output){
                  caption = paste("Note. Error bars indicate", input$errorBarType,". ", input$fig_caption)) +
             xlab(input$IV_name) +
             ylab(input$DV_name) +
-           # theme_classic() +
+            theme_classic() +
                   theme(plot.title = element_text(face = "bold", size = 20),
                   plot.subtitle = element_text(size = 16),
                   plot.caption = element_text(size = 12),
