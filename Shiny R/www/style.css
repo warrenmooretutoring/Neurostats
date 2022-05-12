@@ -1,76 +1,24 @@
 @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
 
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  color:#EE7D33;
-  text-align: center;
-  padding-bottom: 20px;
-} 
-
-h2 {
-   /*font-family: 'Lobster', cursive;   */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 1.1;
-  color: #4472C4;
-  padding-bottom: 20px;
-}
-
-h3 {
-   /*font-family: 'Lobster', cursive;   */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.1;
-  color: #4472C4;
-  text-align: center;
+/** This is for making the Bootstrap tables fully white */
+table, tbody, thead, tr, td, th {
+  border: none !important;
+  background-color: white !important;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #FFFFFF;
 }
 
-#chartForm {
-  display: inline-block;
+h1 {
+  color:#EE7D33;
+} 
+
+h2 {
+  color: #4472C4;
 }
 
-#nameVars {
-  border: 1px black;
-  display: inline-block;
-}  
-
-#variablesContainer {
-  width: 300px;
-}
-
-#figureOptionsContainer {
-  width: 300px;
-}
-
-.column {
-  display: inline-block;
-  float:left;
-}
-.formLabel{
-  width:100px;
-  text-align: right;
-}
-
-.formInput {
-  width:100px;
-}
-
-.container {
-  display: inline-block;
-  padding-bottom: 40px;
-}
-
-.radioLabel {
-  width:25px;
-}
-
-.radioInput {
-  background-color:lightgreen;
+h3 {
+  color: #4472C4;
 }

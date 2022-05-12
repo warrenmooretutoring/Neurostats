@@ -1,4 +1,9 @@
+---
+output: html_document
+runtime: shiny
+---
 #
+
 # This is a Shiny web application. You can run the application by clicking
 # the 'Run App' button above.
 #
@@ -38,7 +43,7 @@ server <- function(input, output){
                           position=position_dodge(0.05)) +
             labs(title = paste("Figure", input$fig_number),
                  subtitle = input$fig_subtitle,
-                 caption = paste("Note. Error bars indicate", input$errorBarType,". ", input$fig_caption)) +
+                 caption = paste("Note Error bars indicate", input$errorBarType,". ", input$fig_caption)) +
             xlab(input$IV_name) +
             ylab(input$DV_name) +
             theme_classic() +
