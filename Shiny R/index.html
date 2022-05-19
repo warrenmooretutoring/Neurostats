@@ -9,55 +9,79 @@
   </style>
 </head>
 <body>
-  <h1>Chart Builder</h1>
-  <h2>Comparing Two Group Means</h2>
-  <form id="chartForm">
-    <div class="container" id="variablesContainer">
-      <h3>Variables</h2>
-      <label class="formLabel" for="DV_name">DV name</label>
-      <input class="formInput" type="text" id="DV_name" name="DV_name" value="Reaction time"><br>
-  
-      <label class="formLabel" for="IV_name">IV name</label>
-      <input class="formInput" type="text" id="IV_name" name="IV_name" value="Drink type"><br>
-    </div>
-    <div class="container"r>
-      <div class="column">
-        <h3>Group 1</h2>
-        <label class="formLabel" for="IV1_level1_name">Variable name</label>
-        <input class="formInput" type="text" id="IV1_level1_name" name="IV1_level1_name" value="Caffeinated"><br>
-        
-        <label class="formLabel" for="IV1_level1_mean">Mean</label>
-        <input class="formInput" type="number" id="IV1_level1_mean" name="IV1_level1_mean" value="40"><br>
-      
-        <select class="formLabel" name="errorBarType">
-          <option value="standard deviation">SD</option>
-          <option value="standard error">SE</option>
-          <option value="95%CI">95%CI</option>
-        </select>
-        <input class="formInput" type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"><br>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="display-3">Chart Builder</h1>
+        <h2>Comparing Two Group Means</h2><hr/>
+        <h3>Variables</h3><hr/>
+        <form id="chartForm">
+          <div class="mb-3 row">
+            <label for="DV_name" class="col-sm-2 col-form-label">DV Name</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="DV_name" name="DV_name" value="Reaction Time">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="IV_name" class="col-sm-2 col-form-label">IV Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="IV_name" name="IV_name" value="Drink Type">
+            </div>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Group 1</th>
+                <th>Group 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Variable Name</th>
+                <td><input class="form-control" type="text" id="IV1_level1_name" name="IV1_level1_name" value="Caffeinated"></td>
+                <td><input class="form-control" type="text" id="IV1_level2_name" name="IV1_level2_name" value="Decaf"></td>
+              </tr>
+              <tr>
+                <th>Mean</th>
+                <td><input class="form-control" type="number" id="IV1_level1_mean" name="IV1_level1_mean" value="40"></td>
+                <td><input class="form-control" type="number" id="IV1_level2_mean" name="IV1_level2_mean" value="90"></td>
+              </tr>
+              <tr>
+                <th>
+                  <select class="form-control" name="errorBarType" id="errorBarType">
+                    <option value="standard deviation">SD</option>
+                    <option value="standard error">SE</option>
+                    <option value="95%CI">95%CI</option>
+                  </select>
+                </th>
+                <td><input class="form-control" type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"></td>
+                <td><input class="form-control" type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Figure options</h3>
+          <div class="mb-3 row">
+            <label for="fig_number" class="col-sm-2 col-form-label">Figure #</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="fig_number" name="fig_number" value="1">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="fig_subtitle" class="col-sm-2 col-form-label">Subtitle</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="fig_subtitle" name="fig_subtitle" value="This is a subtitle.">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="fig_caption" class="col-sm-2 col-form-label">Figure Caption</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="fig_caption" name="fig_caption" value="Mean Reaction Time Scores As A Function of Caffeine Content">
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="column">
-        <h3>Group 2</h2>
-      <!--  <label class="formLabel" for="IV1_level2_name">Variable name</label> -->
-        <input class="formInput" type="text" id="IV1_level2_name" name="IV1_level2_name" value="Decaf"><br>
-      
-      <!--    <label class="formLabel" for="IV1_level2_mean">Mean</label> -->
-        <input class="formInput" type="number" id="IV1_level2_mean" name="IV1_level2_mean" value="90"><br>
-      
-  
-        <input class="formInput" type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"><br>
-      </div> 
     </div>
-      <div class="container" id=figureOptionsContainer>
-      <h3>Figure options</h3>
-      <label class="formLabel" for="fig_number">Figure #</label>
-      <input class="formInput" type="text" id="fig_number" name="fig_number" value="1"><br>
-      
-      <label class="formLabel" for="fig_subtitle">Subtitle</label>
-      <input class="formInput"type="text" id="fig_subtitle" name="fig_subtitle" value="This is a subtitle."><br>
-      
-      <label class="formLabel" for="fig_caption">Figure caption</label>
-      <input class="formInput"type="text" id="fig_caption" name="fig_caption" value="Mean Reaction Time Scores As A Function of Caffeine Content"><br>
   </div>
-  </form>
 </body>
