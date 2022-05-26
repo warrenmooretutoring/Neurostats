@@ -14,6 +14,7 @@ library(RColorBrewer)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  tags$script(src = "script.js"),
   mainPanel(
     includeCSS("www/style.css"),
     includeHTML("index.html")

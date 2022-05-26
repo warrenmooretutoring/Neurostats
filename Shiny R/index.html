@@ -50,7 +50,7 @@
               </tr>
               <tr>
                 <th>
-                  <select class="form-control" name="errorBarType" id="errorBarType">
+                  <select class="form-control" name="errorBarType" id="errorBarType" onchange="everBarTypeInputBoxes()">
                     <option value="standard deviation">SD</option>
                     <option value="standard error">SE</option>
                     <option value="95%CI">95%CI</option>
@@ -58,6 +58,13 @@
                 </th>
                 <td><input class="form-control" type="number" id="IV1_level1_sd" name="IV1_level1_sd" value="10"></td>
                 <td><input class="form-control" type="number" id="IV1_level2_sd" name="IV1_level2_sd" value="15"></td>
+                <td id="upperMessage" hidden><strong>Upper Limit</strong></td>
+              </tr>
+              <tr id='IVRow2' hidden>
+                <th></th>
+                <td><input class="form-control" type="number" id="IV1_level3_sd" name="IV1_level3_sd" placeholder="Lower e.g. 10"></td>
+                <td><input class="form-control" type="number" id="IV1_level4_sd" name="IV1_level4_sd" placeholder="Lower e.g. 20"></td>
+                <td id="lowerMessage" hidden><strong>Lower Limit</strong></td>
               </tr>
             </tbody>
           </table>
