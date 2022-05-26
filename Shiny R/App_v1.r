@@ -25,17 +25,33 @@ ui <- fluidPage(
 # Define server logic required to make plot
 server <- function(input, output){
   output$ErrorbarPlot <- renderPlot({
-    # generate dataframe holding input data          
-    df<-data.frame(Mean=c(input$IV1_level1_mean, input$IV1_level2_mean),
-                   sd=c(input$IV1_level1_sd,input$IV1_level2_sd),
-                   Category=c(input$IV1_level1_name, input$IV1_level2_name))
+    # generate dataframe holding input data   
+
     
-    
+ #   if (input$errorBarType == "95%CI") {
+#      error <- c(input$IV1_level1_Upper_1, input$IV1_level1_Lower_1)
+#    } else {
+#      error <- c(input$IV1_level1_Upper_1,input$IV1_level1_Lower_1)
+#    } 
+  
+      if (input$errorBarType == "95%CI") {
+        df<-data.frame(Mean=c(input$IV1_level1_mean, input$IV1_level2_mean), 
+                       ymaxcol = c(input$IV1_level1_Upper, input$IV1_level2_Upper), 
+                       ymincol = c(input$IV1_level1_Lower, input$IV1_level2_Lower),
+                       Category=c(input$IV1_level1_name, input$IV1_level2_name))  
+           } else {
+             df<-data.frame(Mean=c(input$IV1_level1_mean, input$IV1_level2_mean), 
+                            ymaxcol = c(input$IV1_level1_Upper, input$IV1_level2_Upper), 
+                            ymincol = c(input$IV1_level1_Upper, input$IV1_level2_Upper),
+                            Category=c(input$IV1_level1_name, input$IV1_level2_name)) 
+        } 
+
+ 
     # plot in graph
     (p <- ggplot(df, aes(x=Category, y=Mean, fill = Category)) + 
         geom_bar(stat="identity") +
         scale_fill_brewer(palette = "BuPu") +
-        geom_errorbar(aes(ymin=Mean-sd, ymax=Mean+sd), width=.2,
+        geom_errorbar(aes(ymin=Mean - ymincol, ymax=Mean + ymaxcol), width=.2,
                       position=position_dodge(0.05)) +
         labs(title = paste("Figure", input$fig_number),
              subtitle = input$fig_subtitle,
