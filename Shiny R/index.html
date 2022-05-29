@@ -87,12 +87,21 @@
               <input type="text" class="form-control" id="fig_caption" name="fig_caption" value="Mean Reaction Time Scores As A Function of Caffeine Content">
             </div>
           </div>
-          <div class="mb-3 row"
-          <input type="color" name="color" id="color">
-            
+          <div class="mb-3 row">
+  <label for="IV1_Level1_Color">Group 1 colour</label>
+  <input type="color" id="IV1_Level1_Color" name="IV1_Level1_Color" value="0096FF">
+  <label for="IV1_Level2_Color">Group 2 colour</label>
+  <input type="color" id="IV1_Level2_Color" name="IV1_Level2_Color" value="#0096FF">
+
           <input type="Checkbox" id="TogglePlotWatermark" name="TogglePlotWatermark" value="0">
           <label for="TogglePlotWatermark"> Toggle Watermark</label>
-          </div></div>
+          
+          <select class="form-control" name="barColor" id="barColor">
+              <option value="blue">Blue</option>
+              <option value="orange">Orange</option>
+              <option value="green">Green</option>
+          </select>
+          </div>
         </form>
       </div>
     </div>
