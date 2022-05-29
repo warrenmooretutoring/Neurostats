@@ -62,8 +62,8 @@
               </tr>
               <tr id='IVRow2' hidden>
                 <th></th>
-                <td><input class="form-control" type="number" id="IV1_level1_Lower" name="IV1_level1_Lower" placeholder="Lower e.g. 10"></td>
-                <td><input class="form-control" type="number" id="IV1_level2_Lower" name="IV1_level2_Lower" placeholder="Lower e.g. 20"></td>
+                <td><input class="form-control" type="number" id="IV1_level1_Lower" name="IV1_level1_Lower" placeholder="Lower limit"></td>
+                <td><input class="form-control" type="number" id="IV1_level2_Lower" name="IV1_level2_Lower" placeholder="Lower limit"></td>
                 <td id="lowerMessage" hidden><strong>Lower Limit</strong></td>
               </tr>
             </tbody>
@@ -87,6 +87,12 @@
               <input type="text" class="form-control" id="fig_caption" name="fig_caption" value="Mean Reaction Time Scores As A Function of Caffeine Content">
             </div>
           </div>
+          <div class="mb-3 row"
+          <input type="color" name="color" id="color">
+            
+          <input type="Checkbox" id="TogglePlotWatermark" name="TogglePlotWatermark" value="0">
+          <label for="TogglePlotWatermark"> Toggle Watermark</label>
+          </div></div>
         </form>
       </div>
     </div>

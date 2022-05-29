@@ -55,18 +55,27 @@ server <- function(input, output){
                       position=position_dodge(0.05)) +
         labs(title = paste("Figure", input$fig_number),
              subtitle = input$fig_subtitle,
-             caption = paste("Note. Error bars indicate", input$errorBarType,". ", input$fig_caption)) +
-        xlab(input$IV_name) +
+           #  caption = paste("italic('Note.') Error bars indicate ", input$errorBarType,". ", input$fig_caption)) +
+          #  caption = paste("italic('Note.') Error bars indicate ", input$errorBarType,". ", input$fig_caption)) +
+       caption = expression(paste(italic("Note. "), "Error bars indicate ", input$errorBarType, "test text"))) +
+             xlab(input$IV_name) +
         ylab(input$DV_name) +
         theme_classic() +
         theme(plot.title = element_text(face = "bold", size = 20),
               plot.subtitle = element_text(size = 16),
-              plot.caption = element_text(size = 12),
+              plot.caption = element_text(size = 12, hjust = 0),
               axis.title.x = element_text(face = "bold", size = 14),
               axis.title.y = element_text(face = "bold", size = 14),
               axis.text = element_text(size = 12))) 
+  
+    if (input$TogglePlotWatermark == 1) {
+      p + annotate("text", x = c(1, 2), y = c(60, 40), 
+                   label = c("NeuroStats.co.uk") , color="blue", alpha=.2,
+                   size=15 , angle=35, fontface="bold") } else {
+                     p
+                   }
     
-  })
+})
   
 }
 
