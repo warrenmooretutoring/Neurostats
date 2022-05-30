@@ -69,7 +69,7 @@ server <- function(input, output){
               axis.title.y = element_text(face = "bold", size = 14),
               axis.text = element_text(size = 12))) 
     #Toggle watermark - add watermark to plot when checkbox ticked, else load plot without
-    if (input$TogglePlotWatermark == 1) {
+    if (input$togglePlotWatermark == 1) {
       p + annotate("text", x = c(1, 2), y = c(60, 40), 
                    label = c("NeuroStats.co.uk") , color="blue", alpha=.2,
                    size=15 , angle=35, fontface="bold") } else {
@@ -78,7 +78,12 @@ server <- function(input, output){
     #Change plot bar colours using html colour picker
     if (input$barColor == "orange") {
       p + scale_fill_manual(values = c("#FDDCBA", "#EC6E0F"))
-    } else {
+    } else if (input$barColor == "grey") {
+      p + scale_fill_manual(values = c("#EBEBEB", "#AEAEAE"))
+      } else if (input$barColor == "green") {
+      p + scale_fill_manual(values = c("#D7EFD1", "#3AA458"))
+        
+      } else {
      p + scale_fill_brewer(palette = "BuPu") 
     }
     
@@ -87,6 +92,8 @@ server <- function(input, output){
 
 #Show colour pallets
 #tmaptools::palette_explorer()
+# get_brewer_pal("Blues", n = 7)
+
 
 # add download button
 # output$downloadData <- downloadHandler(
