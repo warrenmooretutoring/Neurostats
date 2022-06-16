@@ -16,7 +16,8 @@ library(tmaptools)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  tags$script(src = "script.js"),
+#  tags$script(src = "script.js"),
+  includeScript("www/script.js"),
   mainPanel(
     includeCSS("www/style.css"),
     includeHTML("index.html")
@@ -55,7 +56,7 @@ server <- function(input, output){
                       position=position_dodge(0.05)) +
         labs(title = paste("Figure", input$fig_number),
              subtitle = input$fig_subtitle,
-           #  caption = paste("italic('Note.') Error bars indicate ", input$errorBarType,". ", input$fig_caption)) +
+          #  caption = paste("italic('Note.') Error bars indicate ", input$errorBarType,". ", input$fig_caption)) +
           #  caption = paste("italic('Note.') Error bars indicate ", input$errorBarType,". ", input$fig_caption)) +
         caption = expression(paste(italic("Note. "), "Error bars indicate ", input$errorBarType, "test text"))) +
         xlab(input$IV_name) +
@@ -68,13 +69,19 @@ server <- function(input, output){
               axis.title.x = element_text(face = "bold", size = 14),
               axis.title.y = element_text(face = "bold", size = 14),
               axis.text = element_text(size = 12))) 
+    
     #Toggle watermark - add watermark to plot when checkbox ticked, else load plot without
-    if (input$togglePlotWatermark == 1) {
-      p + annotate("text", x = c(1, 2), y = c(60, 40), 
-                   label = c("NeuroStats.co.uk") , color="blue", alpha=.2,
-                   size=15 , angle=35, fontface="bold") } else {
-                     p
-                   }
+    if (input$togglePlotWatermark == "TRUE") {
+      p <- p + annotate("text", x = 0:4, y = 40, 
+      label = "NeuroStats.co.uk", color="blue", alpha=0.5,
+      size=15, angle=35, fontface="bold") 
+      print("Watermark - ON")
+    } else {
+    p
+      print("Watermark - OFF")
+    }
+
+    
     #Change plot bar colours using html colour picker
     if (input$barColor == "orange") {
       p + scale_fill_manual(values = c("#FDDCBA", "#EC6E0F"))
@@ -82,7 +89,6 @@ server <- function(input, output){
       p + scale_fill_manual(values = c("#EBEBEB", "#AEAEAE"))
       } else if (input$barColor == "green") {
       p + scale_fill_manual(values = c("#D7EFD1", "#3AA458"))
-        
       } else {
      p + scale_fill_brewer(palette = "BuPu") 
     }
