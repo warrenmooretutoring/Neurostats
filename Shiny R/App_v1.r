@@ -72,13 +72,11 @@ server <- function(input, output){
     
     #Toggle watermark - add watermark to plot when checkbox ticked, else load plot without
     if (input$togglePlotWatermark == "TRUE") {
-      p <- p + annotate("text", x = 0:4, y = 40, 
+      p <- p + annotate("text", x = 0:3, y = 60, 
       label = "NeuroStats.co.uk", color="blue", alpha=0.5,
-      size=15, angle=35, fontface="bold") 
-      print("Watermark - ON")
+      size=20, angle=35, fontface="bold") 
     } else {
     p
-      print("Watermark - OFF")
     }
 
     
