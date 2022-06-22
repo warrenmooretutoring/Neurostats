@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<head>
+  <title>Thermal Stimulus Builder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <style>
+
+
+  </style>
+  </head>
+<body>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-3">Thermal Stimulus Builder</h1>
+        <h2>Desired Stimulus</h2><hr/>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <form id="desiredStimulationForm"> 
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 1</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Duration" name="Desired_E1_Duration" value="2"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Temp" name="Desired_E1_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Offset" name="Desired_E1_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Speed" name="Desired_E1_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Baseline" name="Desired_E1_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="number" id="Desired_E1_Return" name="Desired_E1_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 2</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Duration" name="Desired_E2_Duration" value="4"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Temp" name="Desired_E2_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Offset" name="Desired_E2_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Speed" name="Desired_E2_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Baseline" name="Desired_E2_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Return" name="Desired_E2_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 3</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Duration" name="Desired_E3_Duration" value="6"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Temp" name="Desired_E3_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Offset" name="Desired_E3_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Speed" name="Desired_E3_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Baseline" name="Desired_E3_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Return" name="Desired_E3_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 4</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Duration" name="Desired_E4_Duration" value="8"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Temp" name="Desired_E4_Temp" value="43"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Offset" name="Desired_E4_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Speed" name="Desired_E4_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Baseline" name="Desired_E4_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Return" name="Desired_E4_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 5</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Duration" name="Desired_E5_Duration" value="10"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Temp" name="Desired_E5_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Offset" name="Desired_E5_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Speed" name="Desired_E5_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Baseline" name="Desired_E5_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Return" name="Desired_E5_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="container-fluid">
+      <form id="desiredStimulationForm"> 
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 1</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><div id="Actual_E1_Duration" name="Actual_E1_Duration"></div></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="number" id="Actual_E1_Temp" name="Actual_E1_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="number" id="Actual_E1_Offset" name="Actual_E1_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="number" id="Actual_E1_Speed" name="Actual_E1_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="number" id="Actual_E1_Baseline" name="Actual_E1_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="number" id="Actual_E1_Return" name="Actual_E1_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 2</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Duration" name="Desired_E2_Duration" value="4"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Temp" name="Desired_E2_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Offset" name="Desired_E2_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Speed" name="Desired_E2_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Baseline" name="Desired_E2_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E2_Return" name="Desired_E2_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 3</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Duration" name="Desired_E3_Duration" value="6"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Temp" name="Desired_E3_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Offset" name="Desired_E3_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Speed" name="Desired_E3_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Baseline" name="Desired_E3_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E3_Return" name="Desired_E3_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 4</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Duration" name="Desired_E4_Duration" value="8"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Temp" name="Desired_E4_Temp" value="43"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Offset" name="Desired_E4_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Speed" name="Desired_E4_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Baseline" name="Desired_E4_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E4_Return" name="Desired_E4_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+              <div class="row">
+                <h3>Element 5</h3>
+              </div>
+              <div class="row">
+                <table>
+                  <tr>
+                    <td>Duration</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Duration" name="Desired_E5_Duration" value="10"></td> 
+                    <td>Temp</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Temp" name="Desired_E5_Temp" value="33"></td> 
+                  </tr>
+                  <tr>
+                    <td>Offset</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Offset" name="Desired_E5_Offset" value="0"></td> 
+                    <td>Speed</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Speed" name="Desired_E5_Speed" value="1"></td> 
+                  </tr>
+                   <tr>
+                    <td>Baseline</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Baseline" name="Desired_E5_Baseline" value="30"></td> 
+                    <td>Return</td>
+                    <td><input class="form-control" type="text" id="Desired_E5_Return" name="Desired_E5_Return" value="1"></td> 
+                  </tr>
+                </table>
+              </div>
+            </form>
+        </div>
+    </div>
+
+<script>
+  document.getElementById("Actual_E1_Duration").innerHTML = document.getElementById("Desired_E1_Duration").value;
+
+</script>
+
+</body>

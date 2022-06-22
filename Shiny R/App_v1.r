@@ -16,7 +16,7 @@ library(tmaptools)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-#  tags$script(src = "script.js"),
+ downloadButton('downloadData'),
   includeScript("www/script.js"),
   mainPanel(
     includeCSS("www/style.css"),
@@ -61,7 +61,6 @@ server <- function(input, output){
         caption = expression(paste(italic("Note. "), "Error bars indicate ", input$errorBarType, "test text"))) +
         xlab(input$IV_name) +
         ylab(input$DV_name) +
-        ylab(input$IV1_Level1_Color) +
         theme_classic() +
         theme(plot.title = element_text(face = "bold", size = 20),
               plot.subtitle = element_text(size = 16),
@@ -100,7 +99,7 @@ server <- function(input, output){
 
 
 # add download button
-# output$downloadData <- downloadHandler(
+#output$downloadData <- downloadHandler(
 #   filename = function() {
 #     paste('data-', Sys.Date(), '.png', sep='')
 #   },
@@ -108,6 +107,6 @@ server <- function(input, output){
 #     ggsave(plot = p, filename = plot, device = "png")
 #   }
 # )
-
+#print(downloadData)
 # Run the application 
 shinyApp(ui = ui, server = server)
